@@ -1,0 +1,100 @@
+{
+  "default_policy": "allow",
+  "rules": [
+    {
+      "id": 1,
+      "action": "block",
+      "protocol": "tcp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": 23,
+      "description": "Block Telnet",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 2,
+      "action": "allow",
+      "protocol": "tcp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": 22,
+      "description": "Allow SSH",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 3,
+      "action": "allow",
+      "protocol": "tcp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": 80,
+      "description": "Allow HTTP",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 4,
+      "action": "allow",
+      "protocol": "tcp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": 443,
+      "description": "Allow HTTPS",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 5,
+      "action": "block",
+      "protocol": "tcp",
+      "src_ip": "192.168.99.0/24",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": null,
+      "description": "Block suspicious subnet",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 6,
+      "action": "allow",
+      "protocol": "udp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": 53,
+      "description": "Allow DNS",
+      "enabled": true,
+      "hits": 0
+    },
+    {
+      "id": 7,
+      "action": "allow",
+      "protocol": "icmp",
+      "src_ip": "*",
+      "dst_ip": "*",
+      "src_port": null,
+      "dst_port": null,
+      "description": "Allow ICMP/ping",
+      "enabled": true,
+      "hits": 0
+    }
+  ],
+  "rate_rules": [
+    {
+      "id": 1,
+      "src_ip": "*",
+      "max_packets": 5,
+      "window_seconds": 10,
+      "action": "block",
+      "description": "5 pkt/10s global limit",
+      "enabled": true
+    }
+  ]
+}
